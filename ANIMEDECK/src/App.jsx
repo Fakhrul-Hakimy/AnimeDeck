@@ -5,6 +5,7 @@ import Menu from "./menu.jsx";
 import Airing from "./airing.jsx";
 import Details from "./Details.jsx";
 import { Sidebar } from "./sidebar.jsx";
+import Footer from "./Footer.jsx";
 
 const App = () => {
     return (
@@ -27,7 +28,8 @@ const App = () => {
             </div>
 
             <div className="div4">
-                <h1>2025</h1>
+
+                <Footer />
             </div>
         </div>
     );

@@ -7,7 +7,7 @@ const Menu = () => {
 
     return (
         <div className="menu-nav">
-            <img className="nav-logo" src={logo}/>
+            <img className="nav-logo" src={logo} onClick={() => navigate("/")}/>
 
             <ul className="nav-list">
                 <li className="nav-item" onClick={() => navigate("/airing")}>Airing</li>
