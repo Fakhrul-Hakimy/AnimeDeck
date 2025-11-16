@@ -17,10 +17,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-html, body {
-    height: 100%;
-    margin: 0;
-}
+
 .page {
     min-height: 100vh;
     display: flex;
@@ -171,6 +168,35 @@ h1{
 .spinner svg {
     width: 40px;
     height: 40px;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: 200px 1fr 250px;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "div1 div1 div1"
+        "div2 div2 div3"
+        "div4 div4 div4";
+    gap: 10px;
+    padding: 10px;
+    padding-top: 80px; /* same or slightly more than navbar height */
+}
+
+.div1 {
+    grid-area: div1;
+}
+
+.div2 {
+    grid-area: div2;
+}
+
+.div3 {
+    grid-area: div3;
+}
+
+.div4 {
+    grid-area: div4;
 }
 
 
