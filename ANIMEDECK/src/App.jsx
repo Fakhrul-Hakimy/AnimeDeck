@@ -1,38 +1,36 @@
-    import React, { useState} from 'react';
-    import Menu from "./menu.jsx";
-    import Airing from "./airing.jsx";
-    import {Sidebar} from "./sidebar.jsx";
+import React from 'react';
+import { Routes, Route } from "react-router-dom";
 
+import Menu from "./menu.jsx";
+import Airing from "./airing.jsx";
+import Details from "./Details.jsx";
+import { Sidebar } from "./sidebar.jsx";
 
+const App = () => {
+    return (
+        <div className="parent">
+            <div className="div1">
+                <Menu />
+            </div>
 
+            <div className="div2">
+                <Routes>
+                    <Route path="/" element={<h1>Select a menu</h1>} />
+                    <Route path="/airing" element={<Airing />} />
+                    <Route path="/popular" element={<h1>Popular</h1>} />
+                    <Route path="/details/:id" element={<Details />} />
+                </Routes>
+            </div>
 
+            <div className="div3">
+                <Sidebar />
+            </div>
 
-    const App = () => {
-        const [selectMenu, setSelectMenu] = useState("");
+            <div className="div4">
+                <h1>2025</h1>
+            </div>
+        </div>
+    );
+};
 
-
-
-      return (
-
-          <div className="parent">
-              <div className="div1">
-                  <Menu selectMenu={selectMenu} setSelectMenu={setSelectMenu}/>
-              </div>
-              <div className="div2">
-                  {selectMenu==="Airing"? <Airing selectMenu={selectMenu}/>  : null}
-
-                  {selectMenu==="Popular"? <h1>Popular</h1> : null}
-
-              </div>
-              <div className="div3">
-                  <Sidebar />
-              </div>
-              <div className="div4">
-                  <h1>2025</h1>
-              </div>
-          </div>
-
-
-      );
-    }
-    export default App;
+export default App;
