@@ -27,3 +27,6 @@ dist-ssr
 .netlify
 .idea/modules.xml
 package-lock.json
+/.idea
+/.idea
+package-lock.json
