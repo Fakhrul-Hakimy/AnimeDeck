@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local Netlify folder
+.netlify
+.idea/modules.xml
+package-lock.json
