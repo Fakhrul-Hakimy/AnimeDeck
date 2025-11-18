@@ -1,0 +1,28 @@
+plugins = []
+headers = []
+redirects = []
+
+[functions]
+
+[functions."*"]
+
+[build]
+publish = "C:\\laragon\\www\\AnimeDeck\\ANIMEDECK\\dist"
+publishOrigin = "ui"
+commandOrigin = "ui"
+base = "C:\\laragon\\www\\AnimeDeck\\ANIMEDECK"
+command = "npm run build"
+
+[build.environment]
+
+[build.processing]
+
+[build.processing.css]
+
+[build.processing.html]
+
+[build.processing.images]
+
+[build.processing.js]
+
+[build.services]

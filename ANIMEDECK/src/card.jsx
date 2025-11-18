@@ -11,12 +11,12 @@ const Card = ({ anime }) => {
 
             <p className="text-white left-0">{anime.title}</p>
 
-            <span className="rating-section">
+            <div className="rating-section">
                 <img src={star} alt="star" className="star-icon"/>
                 <p className="score"> {anime.rank}</p>
                 <span className="type">{anime.type}</span>
                 <span className="type">{anime.duration}</span>
-            </span>
+            </div>
 
             <span className="details-section">
                 <span className="type">{anime.broadcast.day || "N/A"}</span>
