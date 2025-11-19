@@ -1,0 +1,42 @@
+.Anime-Card {
+    display: grid;
+    width: 300px;      /* FIXED WIDTH */
+    height: 200px;     /* FIXED HEIGHT */
+    background: #000000;
+
+    grid-template-columns: 150px auto;  /* Image left, text right */
+    grid-template-rows: 1fr;            /* ONE row only */
+    grid-template-areas:
+        "Card-Image Card-Body";
+
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+.Anime-Card-Body {
+    grid-area: Card-Body;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* vertical center */
+    gap: 10px;  /* spacing between title & status */
+
+    padding: 15px;
+    background: #353535;
+}
+
+
+.Anime-Card-Image {
+    width: 100%;
+    height: auto;
+    overflow: hidden;         /* prevents overflow */
+    border-radius: 8px;
+}
+
+.Anime-Card-Image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;        /* keeps image beautiful */
+}
