@@ -26,7 +26,7 @@ const UpcomingAnime = ({anime}) => {
                                         ? `${anime.aired.prop.from.day} /${anime.aired.prop.from.month}/${anime.aired.prop.from.year}`
                                         : "Not Available"}
                 </span>
-                <span> : {anime.rating.split(" - ")[0]}</span>
+                <span> : {anime.rating}</span>
                 <span> : {anime.broadcast.day || anime.broadcast.time
                                     ? `${anime.broadcast.day} |  ${anime.broadcast.time}`
                     : "Not Available"
