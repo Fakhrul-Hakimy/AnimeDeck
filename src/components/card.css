@@ -2,7 +2,7 @@
     display: grid;
     width: 300px;      /* FIXED WIDTH */
     height: 200px;     /* FIXED HEIGHT */
-    background: #000000;
+    background: rgb(20, 20, 27);
 
     grid-template-columns: 150px auto;  /* Image left, text right */
     grid-template-rows: 1fr;            /* ONE row only */
@@ -11,6 +11,9 @@
 
     border-radius: 10px;
     overflow: hidden;
+}
+.Anime-Card :hover{
+    transform: scale(1.02);
 }
 
 
@@ -23,7 +26,54 @@
     gap: 10px;  /* spacing between title & status */
 
     padding: 15px;
-    background: #353535;
+    background: rgb(32, 32, 43);
+}
+.Anime-Card-Body-Title{
+    text-align: center;
+    font-size: 10px;
+}
+
+.Anime-Card-Body-SubTitle {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 10px;
+}
+
+.Anime-Card-Body-SubTitle span {
+    display: flex;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2px 4px;
+    border-radius: 6px;
+    font-weight: 500;
+    color: #fff;
+    transition: background 0.2s;
+}
+
+.Anime-Card-Body-SubTitle span:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.Anime-Card-Body-SubTitle span::before {
+    font-weight: 600;
+    margin-right: 4px;
+}
+
+.Anime-Card-Body-SubTitle span:nth-child(1)::before {
+    content: "📅"; /* calendar icon for Release Date */
+}
+
+.Anime-Card-Body-SubTitle span:nth-child(2)::before {
+    content: "⭐"; /* star icon for Rating */
+}
+
+.Anime-Card-Body-SubTitle span:nth-child(3)::before {
+    content: "📺"; /* TV icon for Broadcast */
+}
+
+.Anime-Card-Body-SubTitle span{
+    display: block;
 }
 
 
@@ -32,6 +82,10 @@
     height: auto;
     overflow: hidden;         /* prevents overflow */
     border-radius: 8px;
+    display: flex;
+    justify-content: center; /* horizontal center */
+    align-items: center;     /* vertical center */
+    height: 200px;           /* or whatever height you want */
 }
 
 .Anime-Card-Image img {
