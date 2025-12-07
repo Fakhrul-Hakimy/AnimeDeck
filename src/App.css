@@ -32,6 +32,15 @@
 }
 .hero { grid-area: hero;
 }
+.carousel-inner {
+    max-height: 450px; /* carousel max height */
+}
+
+.carousel-inner img {
+    width: 100%;       /* fill width */
+    height: auto;      /* keep aspect ratio */
+    object-fit: contain; /* fit inside the box without cropping */
+}
 .content { grid-area: content;margin: 15px; }
 .sidebar {
     grid-area: sidebar;

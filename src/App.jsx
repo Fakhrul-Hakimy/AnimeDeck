@@ -6,6 +6,10 @@ import Content from "./components/content.jsx";
 import Footer from "./components/footer.jsx";
 import Anime from "./components/anime.jsx";
 import { Routes, Route, useLocation } from 'react-router-dom';
+// Import Bootstrap CSS
+import 'bootstrap/dist/css/bootstrap.min.css';
+// Import Bootstrap JS bundle (includes Popper)
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 function App() {
     const location = useLocation();
