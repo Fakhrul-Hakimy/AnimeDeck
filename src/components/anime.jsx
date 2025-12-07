@@ -51,7 +51,9 @@ const Anime = () => {
                         <span className="badge bg-secondary me-2 mb-2">
               Status: {anime.status || "N/A"}
             </span>
+
                     </div>
+
                 </div>
             </div>
         </div>
