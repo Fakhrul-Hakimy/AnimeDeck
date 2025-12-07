@@ -1,27 +1,61 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 const Anime = () => {
     const { id } = useParams();
-    const animeUrl= `https://api.jikan.moe/v4/anime/${id}/full`;
-    const [anime, setAnime] = useState([])
-    function getAnime() {
-      fetch(animeUrl)
-        .then(res => res.json())
-        .then(data => setAnime(data.data))
-        .catch(err => console.log(err));
-    }
+    const [anime, setAnime] = useState(null);
 
     useEffect(() => {
-        getAnime();
-    }, [id])
+        const fetchAnime = async () => {
+            try {
+                const res = await fetch(`https://api.jikan.moe/v4/anime/${id}/full`);
+                const data = await res.json();
+                setAnime(data.data);
+            } catch (err) {
+                console.error(err);
+            }
+        };
 
+        fetchAnime();
+    }, [id]);
 
-    return <div>
-        {anime.title}
+    if (!anime) return <p>Loading anime...</p>;
 
-    </div>;
+    return (
+        <div className="container my-5">
+            <div className="row g-4">
+                {/* Anime Image */}
+                <div className="col-md-4 text-center">
+                    <img
+                        src={anime.images.webp.large_image_url}
+                        alt={anime.title}
+                        className="img-fluid rounded shadow-sm"
+                    />
+                </div>
 
+                {/* Anime Details */}
+                <div className="col-md-8">
+                    <h1 className="mb-3">{anime.title}</h1>
+                    <p>{anime.synopsis}</p>
+
+                    <div className="mt-3">
+            <span className="badge bg-secondary me-2 mb-2">
+              Episodes: {anime.episodes || "N/A"}
+            </span>
+                        <span className="badge bg-secondary me-2 mb-2">
+              Score: {anime.score || "N/A"}
+            </span>
+                        <span className="badge bg-secondary me-2 mb-2">
+              Rating: {anime.rating || "N/A"}
+            </span>
+                        <span className="badge bg-secondary me-2 mb-2">
+              Status: {anime.status || "N/A"}
+            </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
 };
 
-export default Anime; // ✅ default export
+export default Anime;
