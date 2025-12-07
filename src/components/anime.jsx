@@ -14,7 +14,7 @@ const Anime = () => {
 
     useEffect(() => {
         getAnime();
-    },[])
+    }, [id])
 
 
     return <div>
