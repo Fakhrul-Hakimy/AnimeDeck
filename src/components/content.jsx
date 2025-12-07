@@ -1,20 +1,32 @@
 import React, {useEffect, useState} from 'react'
 import UpcomingAnime from "./upcomingAnime.jsx";
-import {useNavigate} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 
 
 const Content = () => {
     const navigate = useNavigate();
-
+    const location = useLocation();
+    const isAiringPage = location.pathname === "/airing"; // exact match for Airing page
     const goToAnime = (id) => {
         navigate(`/anime/${id}`);
     };
     const [data, setData] = useState([]);
     const [page, setPage] = useState(1);
     const [maxPage, setmaxPage] = useState(0);
+    const [title, setTitle] = useState("")
     function getAnimeId() {
-        const api=`https://api.jikan.moe/v4/seasons/upcoming?page=${page}`;
-        fetch(api).then(res => res.json())
+        let apiLINK="";
+
+        if(isAiringPage){
+            apiLINK=`https://api.jikan.moe/v4/seasons/now?page=${page}`;
+            setTitle("Current Season")
+        }else{
+            apiLINK=`https://api.jikan.moe/v4/seasons/upcoming?page=${page}`;
+            setTitle("Upcoming Anime");
+        }
+
+
+        fetch(apiLINK).then(res => res.json())
             .then(output => {
                 setData(output.data);
                 setmaxPage(output.pagination.last_visible_page);
@@ -29,7 +41,7 @@ const Content = () => {
     return (
         <div>
             <span>
-            <h2 className="text-center">Upcoming Anime</h2>
+            <h2 className="text-center">{title}</h2>
             </span>
             <div className="card-wrapper">
                 {data.map((item) => {
