@@ -8,7 +8,7 @@ const Hero = () => {
         navigate(`/anime/${id}`);
     };
 
-    const apiUrl = "https://api.jikan.moe/v4/top/anime?limit=5";
+    const apiUrl = "https://api.jikan.moe/v4/top/anime?limit=10";
     const [topAnime, setTopAnime] = useState([]);
 
     useEffect(() => {

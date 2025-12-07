@@ -1,8 +1,14 @@
 import React, {useEffect, useState} from 'react'
 import UpcomingAnime from "./upcomingAnime.jsx";
+import {useNavigate} from "react-router-dom";
 
 
 const Content = () => {
+    const navigate = useNavigate();
+
+    const goToAnime = (id) => {
+        navigate(`/anime/${id}`);
+    };
     const [data, setData] = useState([]);
     const [page, setPage] = useState(1);
     const [maxPage, setmaxPage] = useState(0);
@@ -28,7 +34,7 @@ const Content = () => {
             <div className="card-wrapper">
                 {data.map((item) => {
                     return (
-                        <div key={item.mal_id}>
+                        <div key={item.mal_id} onClick={() => goToAnime(item.mal_id)}>
                             <UpcomingAnime anime={item}></UpcomingAnime>
                         </div>
                     )
