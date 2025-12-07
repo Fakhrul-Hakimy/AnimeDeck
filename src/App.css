@@ -35,6 +35,15 @@
 .carousel-inner {
     max-height: 450px; /* carousel max height */
 }
+.text-stroke {
+    color: white; /* fill color */
+    -webkit-text-stroke: 0.5px black; /* shorthand for stroke-width + stroke-color */
+    text-shadow:
+            1px 1px 0 black,
+            -1px 1px 0 black,
+            1px -1px 0 black,
+            -1px -1px 0 black; /* fallback for browsers without -webkit-text-stroke */
+}
 
 .carousel-inner img {
     width: 100%;       /* fill width */

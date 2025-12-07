@@ -53,9 +53,9 @@ const Hero = () => {
                                 objectFit: 'cover'  // preserve aspect ratio, crop if necessary
                             }}
                         />
-                        <div className="carousel-caption d-none d-md-block">
-                            <h5>{anime.title}</h5>
-                            <p>Score: {anime.score} | Episodes: {anime.episodes}</p>
+                        <div className="carousel-caption d-none d-md-block ">
+                            <h5 className="text-stroke">{anime.title}</h5>
+                            <p className="text-stroke">Score: {anime.score} | Episodes: {anime.episodes}</p>
                         </div>
                     </div>
                 ))}
