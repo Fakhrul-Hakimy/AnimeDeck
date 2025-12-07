@@ -19,7 +19,7 @@ const Anime = () => {
         fetchAnime();
     }, [id]);
 
-    if (!anime) return <p>Loading anime...</p>;
+    if (!anime) return <p className="text-center">Loading anime...</p>;
 
     return (
         <div className="container my-5">

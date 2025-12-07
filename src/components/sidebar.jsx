@@ -8,6 +8,7 @@ const Sidebar = () => {
     const goToAnime = (id) => {
         navigate(`/anime/${id}`);
     };
+
     const APIurl="https://api.jikan.moe/v4/recommendations/anime";
     const [recommend, setRecommend] = useState( []);
 

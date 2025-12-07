@@ -7,22 +7,23 @@ import Footer from "./components/footer.jsx";
 import Anime from "./components/anime.jsx";
 import Airing from "./components/airing.jsx";
 import { Routes, Route, useLocation } from 'react-router-dom';
-// Import Bootstrap CSS
+import Search from "./components/search.jsx";
 import 'bootstrap/dist/css/bootstrap.min.css';
-// Import Bootstrap JS bundle (includes Popper)
+
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 function App() {
     const location = useLocation();
     const isAnimePage = location.pathname.startsWith("/anime/");
     const isAiringPage = location.pathname === "/airing"; // exact match for Airing page
+    const isSearchTermPage = location.pathname.startsWith("/search/");
 
     return (
         <div className="grid">
             <div className="nav_area"><Navbar /></div>
 
             {/* Only show Hero and Sidebar on non-anime, non-airing pages */}
-            {!isAnimePage && !isAiringPage && (
+            {!isAnimePage && !isAiringPage && !isSearchTermPage &&(
                 <>
                     <div className="hero"><Hero /></div>
                     <div className="sidebar"><Sidebar /></div>
@@ -33,6 +34,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Content />} />
                     <Route path="/anime/:id" element={<Anime />} />
+                    <Route path="/search/:searchString" element={<Search />} />
                     <Route path="/airing" element={<Airing />} /> {/* Clean Airing page */}
                 </Routes>
             </div>
