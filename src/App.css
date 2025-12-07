@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     color: white !important;
+    overflow-y: auto;
 
 }
 
@@ -49,8 +50,41 @@
 }
 
 .sidebar {
+    overflow-y: auto;
+    scrollbar-width: none;      /* Firefox */
+    -ms-overflow-style: none;   /* IE/Edge (legacy) */
+    margin: 10px;
+}
 
-    padding-left: 10px;
+.sidebar::-webkit-scrollbar {
+    display: none;              /* Chrome/Safari */
+}
+
+.truncate-badge {
+    display: inline-block;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.custom-dark-card {
+    background-color: rgb(20, 20, 27) !important; /* ensure it overrides Bootstrap */
+    color: #fff !important;                        /* ensure text is white */
+    border-color: rgb(45, 45, 60) !important;
+}
+
+.custom-dark-card .card-body,
+.custom-dark-card .card-title,
+.custom-dark-card .card-text,
+.custom-dark-card .card-header {
+    color: #fff !important;
 }
 
 .hero{
