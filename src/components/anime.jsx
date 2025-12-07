@@ -53,7 +53,20 @@ const Anime = () => {
             </span>
 
                     </div>
-
+                    <div className="mt-3">
+                        <h5 className="display-6">Trailer</h5>
+                        {anime.trailer?.embed_url ? (
+                            <div className="ratio ratio-21x9">
+                                <iframe
+                                    src={anime.trailer.embed_url}
+                                    title={anime.title}
+                                    allowFullScreen
+                                ></iframe>
+                            </div>
+                        ) : (
+                            <p>No trailer available.</p>
+                        )}
+                    </div>
                 </div>
             </div>
         </div>

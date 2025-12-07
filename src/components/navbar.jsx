@@ -23,9 +23,7 @@ const Navbar = () => {
                         <li className="nav-item">
                             <Link className="nav-link" to="/airing">Airing</Link>
                         </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/popular">Popular</Link>
-                        </li>
+                   
                         <li className="nav-item">
                             <span className="nav-link" aria-disabled="true">Contact</span>
                         </li>
