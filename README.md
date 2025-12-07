@@ -15,7 +15,6 @@
 - 📺 **Current Season** - Discover anime currently airing this season
 - 🎯 **Upcoming Anime** - Stay updated with upcoming anime releases
 - 📖 **Detailed Pages** - Rich anime information including synopsis, ratings, episodes, and more
-- 📱 **Fully Responsive** - Beautiful UI that works on mobile, tablet, and desktop
 - ⚡ **Lightning Fast** - Built with Vite for instant load times and HMR
 - 🎨 **Modern Design** - Clean, intuitive interface with Bootstrap 5
 - 🔗 **Client-side Routing** - Smooth navigation with React Router
